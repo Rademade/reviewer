@@ -2,20 +2,6 @@ require "rails_helper"
 
 describe RepoSynchronization do
   describe "#start" do
-    it "saves privacy flag" do
-      stub_github_api_repos(
-        repo_id: 456,
-        owner_id: 1,
-        owner_name: "thoughtbot",
-        repo_name: "user/newrepo"
-      )
-      user = create(:user)
-      synchronization = RepoSynchronization.new(user, "githubtoken")
-
-      synchronization.start
-
-      expect(user.repos.first).to be_private
-    end
 
     it "saves organization flag" do
       stub_github_api_repos(
