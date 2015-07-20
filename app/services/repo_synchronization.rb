@@ -7,10 +7,7 @@ class RepoSynchronization
     repos = api.repos
 
     Repo.transaction do
-      repos.each do |resource|
-        attributes = repo_attributes(resource.to_hash)
-        user.repos << Repo.find_or_create_with(attributes)
-      end
+      repos.each {|resource| check_repo(resource)}
     end
   end
 
@@ -20,15 +17,21 @@ class RepoSynchronization
     @api ||= GithubApi.new(github_token)
   end
 
+  def check_repo(resource)
+    attributes = repo_attributes(resource.to_hash)
+    repo = Repo.find_or_create_with(attributes)
+    user.repos << repo unless user.repos.include? repo
+  end
+
   def repo_attributes(attributes)
     owner = upsert_owner(attributes[:owner])
 
     {
-      private: attributes[:private],
+      private: false, # TODO we made all repos open
       github_id: attributes[:id],
       full_github_name: attributes[:full_name],
       in_organization: attributes[:owner][:type] == GithubApi::ORGANIZATION_TYPE,
-      owner: owner,
+      owner: owner
     }
   end
 

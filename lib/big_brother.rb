@@ -16,6 +16,6 @@ class BigBrother < Faraday::Response::Middleware
   end
 
   def hound?(env)
-    env.request_headers["Authorization"].include?(ENV["HOUND_GITHUB_TOKEN"])
+    true
   end
 end
