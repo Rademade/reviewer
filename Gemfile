@@ -34,6 +34,7 @@ gem "split", require: "split/dashboard"
 gem "stripe"
 gem "uglifier", ">= 1.0.3"
 gem "unicorn"
+gem "dotenv-rails"
 
 group :staging, :production do
   gem "rails_12factor"
@@ -43,11 +44,19 @@ end
 group :development, :test do
   gem "pry"
   gem "byebug"
-  gem "dotenv-rails"
   gem "foreman"
   gem "jasmine-rails"
   gem "poltergeist"
   gem "rspec-rails", ">= 3.2"
+end
+
+
+group :development do
+  gem 'capistrano',  '~> 3.2'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  gem 'capistrano-resque', require: false
 end
 
 group :test do
