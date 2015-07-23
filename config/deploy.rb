@@ -27,8 +27,7 @@ role :resque_scheduler, 'review.rademade.com'
 
 set :resque_environment_task, true
 
-# TODO scualder
-set :workers, { '*' => 3 }
+set :workers, { '*' => 10 }
 
 namespace :deploy do
 
