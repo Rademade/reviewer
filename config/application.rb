@@ -4,6 +4,8 @@ require 'rails/all'
 
 Bundler.require(:default, Rails.env)
 
+Dotenv::Railtie.load
+
 module Houndapp
   class Application < Rails::Application
     config.autoload_paths += %W(#{config.root}/lib)
