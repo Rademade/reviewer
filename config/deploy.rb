@@ -43,5 +43,6 @@ namespace :deploy do
 
   after :finishing, 'deploy:restart_passenger'
   after :finishing, 'deploy:cleanup'
+  after :finishing, 'db:migrate'
   after :restart, 'resque:restart'
 end
