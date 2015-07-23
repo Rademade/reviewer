@@ -28,7 +28,7 @@ role :resque_scheduler, 'review.rademade.com'
 set :resque_environment_task, true
 
 # TODO scualder
-set :workers, { :mailer => 2 }
+set :workers, { '*' => 3 }
 
 namespace :deploy do
 
@@ -43,6 +43,5 @@ namespace :deploy do
 
   after :finishing, 'deploy:restart_passenger'
   after :finishing, 'deploy:cleanup'
-  after :finishing, 'db:migrate'
   after :restart, 'resque:restart'
 end
