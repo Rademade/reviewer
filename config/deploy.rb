@@ -27,7 +27,7 @@ role :resque_scheduler, 'review.rademade.com'
 
 set :resque_environment_task, true
 
-set :workers, { '*' => 10 }
+set :workers, { '*' => 4 }
 
 namespace :deploy do
 
@@ -42,5 +42,5 @@ namespace :deploy do
 
   after :finishing, 'deploy:restart_passenger'
   after :finishing, 'deploy:cleanup'
-  after :restart, 'resque:restart'
+  after :finishing, 'resque:restart'
 end
