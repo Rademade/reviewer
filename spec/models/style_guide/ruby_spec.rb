@@ -158,9 +158,9 @@ describe StyleGuide::Ruby do
 
       context "for long line" do
         it "returns violation" do
-          violations = ["Line is too long. [81/80]"]
+          violations = ["Line is too long. [121/120]"]
 
-          expect(violations_in("a" * 81 + "\n")).to eq violations
+          expect(violations_in("a" * 121 + "\n")).to eq violations
         end
       end
 
