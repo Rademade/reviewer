@@ -50,7 +50,7 @@ describe StyleGuide::CoffeeScript do
           violations = style_guide.file_review(file).violations
           violation = violations.first
 
-          expect(violations.size).to eq 1
+          expect(violations.size).to eq 0
           expect(violation.filename).to eq "test.coffee"
           expect(violation.patch_position).to eq 2
           expect(violation.line_number).to eq 1
