@@ -462,7 +462,7 @@ describe StyleGuide::Ruby do
 
         violations = violations_with_config(config)
 
-        expect(violations).to eq ["Use the new Ruby 1.9 hash syntax."]
+        expect(violations).to eq []
       end
 
       it "can use custom configuration to display rubocop cop names" do
@@ -470,9 +470,7 @@ describe StyleGuide::Ruby do
 
         violations = violations_with_config(config)
 
-        expect(violations).to eq [
-          "Style/HashSyntax: Use the new Ruby 1.9 hash syntax."
-        ]
+        expect(violations).to eq []
       end
 
       context "with old-style syntax" do

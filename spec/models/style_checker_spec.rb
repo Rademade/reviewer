@@ -92,7 +92,7 @@ describe StyleChecker, "#file_reviews" do
 
         violation_messages = pull_request_violations(pull_request)
 
-        expect(violation_messages).to eq ["Empty function"]
+        expect(violation_messages).to eq ["Empty function", "Colon assignment without proper spacing"]
       end
     end
 

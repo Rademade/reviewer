@@ -11,7 +11,7 @@
   "colon_assignment_spacing": {
     "level": "error",
     "spacing": {
-      "left": 0,
+      "left": 1,
       "right": 1
     }
   },
