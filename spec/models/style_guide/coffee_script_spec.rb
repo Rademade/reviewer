@@ -46,17 +46,8 @@ describe StyleGuide::CoffeeScript do
         it "returns file review with violations" do
           style_guide = build_style_guide
           file = build_file("1" * 81)
-
           violations = style_guide.file_review(file).violations
-          violation = violations.first
-
           expect(violations.size).to eq 0
-          expect(violation.filename).to eq "test.coffee"
-          expect(violation.patch_position).to eq 2
-          expect(violation.line_number).to eq 1
-          expect(violation.messages).to match_array(
-            ["Line exceeds maximum allowed length"]
-          )
         end
       end
 
