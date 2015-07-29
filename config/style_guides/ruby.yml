@@ -139,14 +139,14 @@ Style/EmptyLinesAroundBlockBody:
 Style/EmptyLinesAroundClassBody:
   Description: Keeps track of empty lines around class bodies.
   Enabled: true
-  EnforcedStyle: no_empty_lines
+  EnforcedStyle: empty_lines
   SupportedStyles:
   - empty_lines
   - no_empty_lines
 Style/EmptyLinesAroundModuleBody:
   Description: Keeps track of empty lines around module bodies.
   Enabled: true
-  EnforcedStyle: no_empty_lines
+  EnforcedStyle: empty_lines
   SupportedStyles:
   - empty_lines
   - no_empty_lines
@@ -429,7 +429,7 @@ Style/SymbolProc:
 Style/TrailingBlankLines:
   Description: Checks trailing blank lines and final newline.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#newline-eof
-  Enabled: true
+  Enabled: false
   EnforcedStyle: final_newline
   SupportedStyles:
   - final_newline
