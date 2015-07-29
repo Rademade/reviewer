@@ -222,12 +222,11 @@ describe StyleGuide::Ruby do
 
       context "for leading dot used for multi-line method chain" do
         it "returns violations" do
-          violations = ["Place the . on the previous line, together with the "\
-                        "method call receiver."]
+          violations = ["Place the . on the next line"]
 
           expect(violations_in(<<-CODE)).to eq violations
-  one
-    .two
+  one.
+    two
           CODE
         end
       end
@@ -415,8 +414,8 @@ describe StyleGuide::Ruby do
         it "returns violations" do
           code = <<-CODE.strip_heredoc
             def foo
-              user = User.where(email: 'user@example.com').
-                assign_attributes(name: 'User')
+              user = User.where(email: 'user@example.com')
+                .assign_attributes(name: 'User')
               user.save!
             end
           CODE
