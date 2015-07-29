@@ -470,7 +470,7 @@ describe StyleGuide::Ruby do
 
         violations = violations_with_config(config)
 
-        expect(violations).to eq ["Prefer single-quoted strings when you don't need string interpolation or special symbols."]
+        expect(violations).to eq ["Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."]
       end
 
       context "with old-style syntax" do
