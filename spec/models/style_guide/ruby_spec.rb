@@ -222,7 +222,7 @@ describe StyleGuide::Ruby do
 
       context "for leading dot used for multi-line method chain" do
         it "returns violations" do
-          violations = ["Place the . on the next line"]
+          violations = ["Place the . on the next line, together with the method name."]
 
           expect(violations_in(<<-CODE)).to eq violations
   one.
