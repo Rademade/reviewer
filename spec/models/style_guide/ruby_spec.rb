@@ -17,7 +17,7 @@ describe StyleGuide::Ruby do
       describe "for { and } as %r literal delimiters" do
         it "returns no violations" do
           expect(violations_in(<<-CODE)).to eq []
-            "test" =~ %r|test|
+            'test' =~ %r|test|
           CODE
         end
       end
@@ -62,7 +62,7 @@ describe StyleGuide::Ruby do
         it "returns no violations" do
           expect(violations_in(<<-CODE)).to eq []
   def has_something?
-    "something"
+    'something'
   end
           CODE
         end
@@ -74,7 +74,7 @@ describe StyleGuide::Ruby do
 
           expect(violations_in(<<-CODE)).to eq violations
   def is_something?
-    "something"
+    'something'
   end
           CODE
         end
@@ -177,7 +177,7 @@ describe StyleGuide::Ruby do
           violations = ["Space inside parentheses detected."]
 
           expect(violations_in(<<-CODE)).to eq violations
-  logger( "test")
+  logger( 'test')
           CODE
         end
       end
@@ -187,7 +187,7 @@ describe StyleGuide::Ruby do
           violations = ["Space inside parentheses detected."]
 
           expect(violations_in(<<-CODE)).to eq violations
-  logger("test" )
+  logger('test' )
           CODE
         end
       end
@@ -197,7 +197,7 @@ describe StyleGuide::Ruby do
           violations = ["Space inside square brackets detected."]
 
           expect(violations_in(<<-CODE)).to eq violations
-  a["test" ]
+  a['test' ]
           CODE
         end
       end
@@ -241,7 +241,7 @@ describe StyleGuide::Ruby do
 
           expect(violations_in(<<-CODE)).to eq violations
   def test
-  \tlogger "test"
+  \tlogger 'test'
   end
           CODE
         end
@@ -415,8 +415,8 @@ describe StyleGuide::Ruby do
         it "returns violations" do
           code = <<-CODE.strip_heredoc
             def foo
-              user = User.where(email: "user@example.com").
-                assign_attributes(name: "User")
+              user = User.where(email: 'user@example.com').
+                assign_attributes(name: 'User')
               user.save!
             end
           CODE
@@ -456,7 +456,7 @@ describe StyleGuide::Ruby do
       it "finds only one violation" do
         config = {
           "StringLiterals" => {
-            "EnforcedStyle" => "double_quotes"
+            "EnforcedStyle" => "single_quotes"
           }
         }
 
@@ -536,7 +536,7 @@ describe StyleGuide::Ruby do
           violations = ["Unnecessary spacing detected."]
 
           expect(violations_in(<<-CODE)).to eq violations
-  hoge  = "https://github.com/bbatsov/rubocop"
+  hoge  = 'https://github.com/bbatsov/rubocop'
   hoge
           CODE
         end
