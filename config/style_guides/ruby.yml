@@ -219,7 +219,7 @@ Style/IndentationWidth:
   Width: 2
 Style/IndentHash:
   Description: Checks the indentation of the first key in a hash literal.
-  Enabled: true
+  Enabled: false
   EnforcedStyle: special_inside_parentheses
   SupportedStyles:
   - special_inside_parentheses
