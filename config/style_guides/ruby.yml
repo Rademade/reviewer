@@ -80,7 +80,7 @@ Style/CaseIndentation:
   SupportedStyles:
   - case
   - end
-  IndentOneStep: false
+  IndentOneStep: true
 Style/ClassAndModuleChildren:
   Description: Checks style of children classes and modules.
   Enabled: false
@@ -703,7 +703,7 @@ Style/ElseAlignment:
   Enabled: true
 Style/EmptyElse:
   Description: Avoid empty else-clauses.
-  Enabled: true
+  Enabled: false
 Style/EmptyLines:
   Description: Don't use several empty lines in a row.
   Enabled: true
