@@ -131,14 +131,14 @@ Style/EmptyLineBetweenDefs:
   AllowAdjacentOneLineDefs: false
 Style/EmptyLinesAroundBlockBody:
   Description: Keeps track of empty lines around block bodies.
-  Enabled: true
+  Enabled: false
   EnforcedStyle: no_empty_lines
   SupportedStyles:
   - empty_lines
   - no_empty_lines
 Style/EmptyLinesAroundClassBody:
   Description: Keeps track of empty lines around class bodies.
-  Enabled: true
+  Enabled: false
   EnforcedStyle: empty_lines
   SupportedStyles:
   - empty_lines
