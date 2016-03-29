@@ -517,8 +517,7 @@ describe StyleGuide::Ruby do
 
       context "with empty lines around block" do
         it "returns violations" do
-          violations = ["Extra empty line detected at block body beginning.",
-                        "Extra empty line detected at block body end."]
+          violations = []
 
           expect(violations_in(<<-CODE)).to eq violations
   block do |hoge|
